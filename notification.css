@@ -1,0 +1,276 @@
+/* ===== ADD THIS TO YOUR style.css ===== */
+
+/* ----- Notification Buttons - Clean Card Style ----- */
+.notification-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 1rem 0 2rem;
+}
+
+.notif-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 2rem 1rem;
+  background: rgba(30, 24, 56, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 1.8rem;
+  text-decoration: none;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
+
+/* Glow effect on hover */
+.notif-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.notif-btn:hover::before {
+  opacity: 1;
+}
+
+.notif-btn i:first-child {
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.notif-btn span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e8e0f0;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  font-family: 'Playfair Display', serif;
+}
+
+.notif-btn i:last-child {
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.notif-btn:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.notif-btn:hover i:last-child {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notif-btn:hover span {
+  transform: scale(1.05);
+}
+
+/* SSC Button */
+.ssc-btn {
+  border-color: rgba(100, 180, 255, 0.15);
+}
+
+.ssc-btn i:first-child {
+  color: #7ab8ff;
+}
+
+.ssc-btn:hover {
+  border-color: #7ab8ff;
+  background: rgba(100, 180, 255, 0.08);
+  box-shadow: 0 0 40px rgba(100, 180, 255, 0.05);
+}
+
+.ssc-btn:hover i:first-child {
+  transform: scale(1.1);
+  text-shadow: 0 0 30px rgba(100, 180, 255, 0.2);
+}
+
+.ssc-btn:hover i:last-child {
+  color: #7ab8ff;
+}
+
+/* RRB Button */
+.rrb-btn {
+  border-color: rgba(255, 165, 0, 0.15);
+}
+
+.rrb-btn i:first-child {
+  color: #f0b84d;
+}
+
+.rrb-btn:hover {
+  border-color: #f0b84d;
+  background: rgba(255, 165, 0, 0.08);
+  box-shadow: 0 0 40px rgba(255, 165, 0, 0.05);
+}
+
+.rrb-btn:hover i:first-child {
+  transform: scale(1.1);
+  text-shadow: 0 0 30px rgba(255, 165, 0, 0.2);
+}
+
+.rrb-btn:hover i:last-child {
+  color: #f0b84d;
+}
+
+/* IB Button */
+.ib-btn {
+  border-color: rgba(0, 200, 150, 0.15);
+}
+
+.ib-btn i:first-child {
+  color: #5ad8b0;
+}
+
+.ib-btn:hover {
+  border-color: #5ad8b0;
+  background: rgba(0, 200, 150, 0.08);
+  box-shadow: 0 0 40px rgba(0, 200, 150, 0.05);
+}
+
+.ib-btn:hover i:first-child {
+  transform: scale(1.1);
+  text-shadow: 0 0 30px rgba(0, 200, 150, 0.2);
+}
+
+.ib-btn:hover i:last-child {
+  color: #5ad8b0;
+}
+
+/* Others Button */
+.others-btn {
+  border-color: rgba(200, 150, 255, 0.15);
+}
+
+.others-btn i:first-child {
+  color: #c9a8ff;
+}
+
+.others-btn:hover {
+  border-color: #c9a8ff;
+  background: rgba(200, 150, 255, 0.08);
+  box-shadow: 0 0 40px rgba(200, 150, 255, 0.05);
+}
+
+.others-btn:hover i:first-child {
+  transform: scale(1.1);
+  text-shadow: 0 0 30px rgba(200, 150, 255, 0.2);
+}
+
+.others-btn:hover i:last-child {
+  color: #c9a8ff;
+}
+
+/* ===== RESPONSIVE FOR NOTIFICATION BUTTONS ===== */
+
+/* Tablet */
+@media (max-width: 991px) {
+  .notification-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  
+  .notif-btn {
+    min-height: 140px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .notif-btn i:first-child {
+    font-size: 2.2rem;
+  }
+  
+  .notif-btn span {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 767px) {
+  .notification-buttons {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .notif-btn {
+    min-height: 120px;
+    padding: 1.2rem 0.8rem;
+    border-radius: 1.4rem;
+  }
+  
+  .notif-btn i:first-child {
+    font-size: 1.8rem;
+  }
+  
+  .notif-btn span {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 575px) {
+  .notification-buttons {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  
+  .notif-btn {
+    min-height: 100px;
+    padding: 1rem 0.6rem;
+    border-radius: 1.2rem;
+    gap: 0.5rem;
+  }
+  
+  .notif-btn i:first-child {
+    font-size: 1.5rem;
+  }
+  
+  .notif-btn span {
+    font-size: 0.85rem;
+  }
+  
+  .notif-btn i:last-child {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small */
+@media (max-width: 360px) {
+  .notification-buttons {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  
+  .notif-btn {
+    min-height: 80px;
+    padding: 0.8rem 0.4rem;
+    border-radius: 1rem;
+    gap: 0.3rem;
+  }
+  
+  .notif-btn i:first-child {
+    font-size: 1.2rem;
+  }
+  
+  .notif-btn span {
+    font-size: 0.7rem;
+  }
+  
+  .notif-btn i:last-child {
+    font-size: 0.7rem;
+  }
+}
